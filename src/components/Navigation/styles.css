@@ -1,0 +1,33 @@
+.Navigation__list {
+    display: flex;
+}
+.Navigation__list li {
+    list-style: none;
+    margin-right: 16px;
+}
+.Navigation__link {
+    color: #424242;
+    text-transform: uppercase;
+    text-decoration: none;
+    position: relative;
+    font-size: 20px;
+    display: block;
+}
+.Navigation__link::after {
+    content: '';
+    width: 0px;
+    height: 4px;
+    position: absolute;
+    background-color: #ff5722;
+    left: 0;
+    top: 47px;
+    -webkit-transition: width .3s linear;
+    -o-transition: width .3s linear;
+    transition: width .3s linear;
+}
+.Navigation__link:hover {
+    color: #ff5722;
+}
+.Navigation__link:hover::after {
+    width: 100%;
+}
