@@ -1,16 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import card from './card';
 import './styles.css';
 
-class MovieCard extends React.Component {
-    static propTypes = {
-        title: PropTypes.string.isRequired,
-        descr: PropTypes.string.isRequired,
-        onMovieClick: PropTypes.func.isRequired
-    }
-    render() {
-        const { title,descr, onClick, rating, genres } = this.props;
+    
+    const MovieCard = ({ title,descr, onClick, rating, genres }) => {
+
         return (
             <div className="MovieCard">
               <div className="MoveInfo">
@@ -25,8 +19,11 @@ class MovieCard extends React.Component {
             </div>
         )
     }
-}
+    
 MovieCard.propTypes = {
-    title: PropTypes.string.isRequired
+    title: PropTypes.string.isRequired,
+    descr: PropTypes.string.isRequired,
+    onClick: PropTypes.func,
+    rating: PropTypes.string.isRequired
 }
 export default MovieCard;

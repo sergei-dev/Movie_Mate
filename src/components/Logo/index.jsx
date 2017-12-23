@@ -1,14 +1,12 @@
 import React from 'react';
 import './styles.css';
 
-class Logo extends React.Component {
-    render() {
-        const { logo__text } = this.props;
+const Logo = ({ Logo__text }) => {
         return (
             <div className="Logo">
-               <h1 className="Logo__text">{logo__text}</h1> 
+               <h1 className="Logo__text">{Logo__text}</h1> 
             </div>
         )
-    }
 }
+
 export default Logo;

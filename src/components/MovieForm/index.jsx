@@ -5,7 +5,7 @@ import './styles.css';
 const genreList = ['drama','action','comedy'];
 
 const MovieForm = ({ onFormSubmit }) => {
-    const refs = {
+    const mov = {
         id: null,
         form: null,
         title: null,
@@ -19,19 +19,19 @@ const MovieForm = ({ onFormSubmit }) => {
     const handleSubmit = event => {
         event.preventDefault();
 
-        const genres = refs.checkboxes
+        const genres = mov.checkboxes
         .filter(check => check.checked)
         .map(x => x.value);
 
-        if(areInputFilled([refs.title, refs.descr])) {
+        if(areInputFilled([mov.title, mov.descr])) {
             onFormSubmit({
                 id: v4(),
-                title: refs.title.value,
-                descr: refs.descr.value,
-                rating: refs.rating.value,
+                title: mov.title.value,
+                descr: mov.descr.value,
+                rating: mov.rating.value,
                 genres
             });
-            refs.form.reset();
+            mov.form.reset();
         }
         else {
             alert('Заполните поля');
@@ -41,22 +41,22 @@ const MovieForm = ({ onFormSubmit }) => {
     return (
         <form className="MovieForm"
          onSubmit={handleSubmit}
-         ref={node => (refs.form = node)}>
+         ref={node => (mov.form = node)}>
             <label className="MovieForm__label">
               Title 
               <input type="text"
                className="MovieForm__input"
-               ref={node => (refs.title = node)}/>
+               ref={node => (mov.title = node)}/>
             </label>
             <label className="MovieForm__label">
             Description
             <textarea rows={8}
             className="MovieForm__textarea"
-            ref={node => (refs.descr = node)}
+            ref={node => (mov.descr = node)}
             ></textarea>
             </label>
             <label className="MovieForm__label">
-            <select className="MovieForm__input" ref={node => (refs.rating = node)}>
+            <select className="MovieForm__input" ref={node => (mov.rating = node)}>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -75,7 +75,7 @@ const MovieForm = ({ onFormSubmit }) => {
                         <input 
                         type="checkbox"
                         value={genre}
-                        ref={node => refs.checkboxes.push(node)}
+                        ref={node => mov.checkboxes.push(node)}
                         />
                         {genre}
                     </label>
