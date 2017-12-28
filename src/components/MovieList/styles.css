@@ -1,7 +1,9 @@
 .MovieList {
+    position: relative;
+    display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    -ms-flex: 0 0 62%;
-    flex: 0 0 62%;
+    -ms-flex: 0 0 77%;
+    flex: 0 0 77%;
 }

@@ -1,0 +1,29 @@
+.SearchCategories {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    margin-bottom: 30px;
+}
+.SearchCategories__btn {
+    display: block;
+    outline: 0;
+    border: 0;
+    background-color: #e2b100;
+    cursor: pointer;
+    padding: 10px 8px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    color: #0c161e;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 2px 2px 0 rgba(33,33,33,.5);
+    box-shadow: 0 2px 2px 0 rgba(33,33,33,.5);
+    -webkit-transition: all .1s linear;
+    -o-transition: all .1s linear;
+    transition: all .1s linear;
+}

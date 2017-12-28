@@ -3,36 +3,32 @@ import './styles.css';
 import PropTypes from 'prop-types';
 import MovieCard from '../MovieCard';
 
-const MovieList = ({ movies, onMovieClick }) => {
+const MovieList = ({ movies, onMovieClick, addWatch }) => {
     return (
         <div className="MovieList">
            {movies.map(mov => (
                <MovieCard
-               key={mov.id}
-               title={mov.title}
-               descr={mov.descr}
-               rating={mov.rating}
-               genres={mov.genres}
-               onClick={() => {
-                   onMovieClick(mov.id);
+               click={() => {
+                 addWatch(mov.id);
                }}
-               
+               key={mov.id}
+               {...mov}
                />
            ))}
-        </div>
+           </div>
     )
 }
 
 MovieList.propTypes = {
     movies: PropTypes.arrayOf(
       PropTypes.shape({
-        id: PropTypes.string.isRequired,
+        id: PropTypes.number.isRequired,
         title: PropTypes.string.isRequired,
         descr: PropTypes.string.isRequired,
-        rating: PropTypes.string.isRequired
+        rating: PropTypes.number.isRequired,
+        release: PropTypes.string.isRequired
       }).isRequired
-    ).isRequired,
-    onMovieClick: PropTypes.func.isRequired
+    ).isRequired
   };
 
   

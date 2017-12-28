@@ -6,7 +6,7 @@
     margin-right: 16px;
 }
 .Navigation__link {
-    color: #424242;
+    color: #fff;
     text-transform: uppercase;
     text-decoration: none;
     position: relative;
@@ -18,7 +18,7 @@
     width: 0px;
     height: 4px;
     position: absolute;
-    background-color: #ff5722;
+    background-color: #3f51b5;
     left: 0;
     top: 47px;
     -webkit-transition: width .3s linear;
@@ -26,7 +26,7 @@
     transition: width .3s linear;
 }
 .Navigation__link:hover {
-    color: #ff5722;
+    color: #e2b100;
 }
 .Navigation__link:hover::after {
     width: 100%;
