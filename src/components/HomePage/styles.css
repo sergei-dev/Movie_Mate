@@ -1,0 +1,28 @@
+.HomePage {
+    padding: 50px 0;
+    color: #424242;
+}
+.HomePage__icon {
+    display: block;
+    margin: auto;
+    width: 200px;
+    height: auto;
+}
+.HomePage__title {
+    margin-bottom: 50px;
+    margin-top: 50px;
+    text-align: center;
+}
+.HomePage__text {
+    width: 40%;
+    margin: auto;
+    text-align: center;
+    font-size: 20px;
+    line-height: 1.5;
+}
+.HomePage__link {
+    display: inline-block;
+    margin-left: 5px;
+    color: #424242;
+    text-decoration: underline;
+}

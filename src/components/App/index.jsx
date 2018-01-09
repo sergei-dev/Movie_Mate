@@ -1,20 +1,40 @@
 import React from 'react';
+import { Route, Switch, Redirect } from 'react-router-dom';
 import Header from '../Header';
 import Logo from '../Logo';
 import Navigation from '../Navigation';
 import MovieList from '../MovieList';
+import HomePage from '../HomePage';
+import MoviesPage from '../MoviesPage';
+import AboutPage from '../AboutPage';
 import AppSidebar from '../AppSidebar';
 import SearchCategories from "../SearchCategories";
 import SearchForm from "../SearchForm";
 import WatchList from '../WatchList';
 import  { fetchData } from 'Fetch';
+import HomeIcon from '../HomePage/assets/clapperboard.2e065d52.svg';
 import './styles.css';
 
+const navLinks = [
+    {
+        path: '/',
+        text: 'Home'
+    },
+    {
+        path: '/movies',
+        text: 'Movies'
+    },
+    {
+        path: '/about',
+        text: 'About'
+    }
+]
 class App extends React.Component {
     state = {
         moviesCard: [],
         watchList: []
     }
+
 
     setSettings = (key, value) => {
 		if ('localStorage' in window && window['localStorage'] !== null) {
@@ -106,16 +126,32 @@ class App extends React.Component {
             <div id="App">
                 <Header>
                    <Logo Logo__text="Movie Mate"/>
-                   <Navigation items={['About','Browse','Login']}/>
+                   <Navigation links={navLinks}/>
                 </Header>
-                <div className="app_body">
-                    <AppSidebar>
-                        <SearchForm getMovies={this.handleFormSubmit}/>
-                        <SearchCategories onClickCategories={this.fetchMoviesByCategory}/>
-                        <WatchList onClickWatchlist={watchList} onDeleteWatch={this.deleteToWatchlist}/>
-                    </AppSidebar>
-                    <MovieList addWatch={this.addToWatchlist} movies={moviesCard}/> 
-                </div>
+                <Switch>
+                  <Route exact path="/" component={() => (
+                      <HomePage
+                      homeIcon={HomeIcon}
+                      title="Welcome to Movie Mate"
+                      oneText="This is a single page application that lets you manage all kinds of movies."
+                      twoText="If you wish to learn more about Movie Mate visit. "
+                      threeText="Or start browsing right now in " 
+                      />
+                  )
+                 }/>
+                 <Route path="/movies" component={() => (
+                      <MoviesPage>
+                      <AppSidebar>
+                          <SearchForm getMovies={this.handleFormSubmit}/>
+                          <SearchCategories onClickCategories={this.fetchMoviesByCategory}/>
+                          <WatchList onClickWatchlist={watchList} onDeleteWatch={this.deleteToWatchlist}/>
+                      </AppSidebar>
+                      <MovieList addWatch={this.addToWatchlist} movies={moviesCard}/> 
+                  </MoviesPage>
+                 )}/>
+                 <Route path="/about" component={AboutPage}/>
+                 <Redirect to="/"/>
+               </Switch>
             </div>
         )   
     }

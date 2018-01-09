@@ -1,0 +1,16 @@
+.TeamList {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+.TeamList__members {
+    -ms-flex: 0 0 20%;
+    flex: 0 0 20%;
+    margin-right: 5%;
+    color: #424242;
+    font-size: 18px;
+    line-height: 1.5;
+}

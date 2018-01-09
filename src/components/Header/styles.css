@@ -3,7 +3,6 @@
     -ms-flex-pack: justify;
     justify-content: space-between;
     padding: 16px 0;
-    align-items: center;
     margin-bottom: 20px;
-    border-bottom: 4px solid #e2b100;
+    border-bottom: 4px solid #424242;
 }

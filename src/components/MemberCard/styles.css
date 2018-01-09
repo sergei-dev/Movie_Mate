@@ -1,0 +1,52 @@
+.TeamList__card {
+    width: 100%;
+    max-width: 400px;
+}
+.MemberCard {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    border: 6px solid #424242;
+}
+.MemberCard__img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+.MemberCard__info {
+    position: absolute;
+    text-align: center;
+    color: #fff;
+}
+.MemberCard__pos {
+    font-size: 30px;
+}
+.MemberCard__name {
+    margin-bottom: 16px;
+    font-size: 40px;
+    text-transform: uppercase;
+}
+.MemberCard__name:after {
+    display: block;
+    content: "";
+    margin: auto;
+    margin-top: 8px;
+    width: 50%;
+    height: 2px;
+    background-color: #fff;
+}
+.MemberCard:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: "";
+    background-color: rgba(0,0,0,.4);
+}

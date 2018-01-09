@@ -1,19 +1,35 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import './styles.css';
 
-const Navigation = ({ items }) => {
+const Navigation = ({ links }) => {
     return (
         <nav className="Navigation">
-            <ul className="Navigation__list">
-                {items.map(item => <li key={item}><a className="Navigation__link" href="/">{item}</a></li>)}
-            </ul>
+                {links.map(link => (         
+                    link.path === '/' ? <NavLink 
+                    exact
+                    key={link.text}
+                     className="Navigation__link" 
+                     activeClassName="Navigation__link--active"
+                     to={link.path}>{link.text}
+                    </NavLink>  
+                    : <NavLink 
+                    key={link.text}
+                     className="Navigation__link" 
+                     activeClassName="Navigation__link--active"
+                     to={link.path}>{link.text}
+                    </NavLink>  
+                ))}
         </nav>
      )
 }
 Navigation.propTypes = {
-    items: PropTypes.arrayOf(
-        PropTypes.string.isRequired
+    links: PropTypes.arrayOf(
+        PropTypes.shape({
+            path: PropTypes.string.isRequired,
+            text: PropTypes.string.isRequired,            
+        })
     ).isRequired
 }
     
