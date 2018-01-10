@@ -7,7 +7,7 @@ import registerServicesWorker from './registerServiceWorker';
 
 const root = document.querySelector('#root');
 ReactDOM.render(
-    <BrowserRouter>
+    <BrowserRouter basename="Movie_Mate/build/">
         <App />
     </BrowserRouter>,    
     root
