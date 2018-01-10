@@ -129,14 +129,14 @@ class App extends React.Component {
                    <Navigation links={navLinks}/>
                 </Header>
                 <Switch>
-                  <Route exact path="/" component={() => (
+                  <Route exact path="/" render={(props) => (
                       <HomePage
                       homeIcon={HomeIcon}
                       title="Welcome to Movie Mate"
                       oneText="This is a single page application that lets you manage all kinds of movies."
                       twoText="If you wish to learn more about Movie Mate visit. "
                       threeText="Or start browsing right now in " 
-                      />
+                      {...props}/>
                   )
                  }/>
                  <Route path="/movies" component={() => (
