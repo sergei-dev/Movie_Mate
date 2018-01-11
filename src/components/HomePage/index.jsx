@@ -11,11 +11,11 @@ const HomePage = ({ homeIcon,title,oneText,twoText,threeText }) => {
             </p>
             <p className="HomePage__text">
               {twoText}
-              <a className="HomePage__link" href="/about">About Page</a>
+              <a className="HomePage__link" href="Movie_Mate/build//about">About Page</a>
             </p>
             <p className="HomePage__text">
               {threeText}
-              <a className="HomePage__link" href="/movies">Movie Gallery</a>
+              <a className="HomePage__link" href="Movie_Mate/build//movies">Movie Gallery</a>
             </p>
 
         </div>
